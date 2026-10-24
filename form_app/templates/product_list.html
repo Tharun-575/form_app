@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product list</title>
+</head>
+<body>
+    <h1>Product List</h1>
+
+{% for product in products %}
+    <h3>{{ product.name }}</h3>
+    <p style="margin-bottom: 10px; background-color: #f0f0f0;">{{ product.description }}</p>
+    <p>Price: ₹{{ product.price }}</p>
+    <p>
+        Available:
+        {% if product.is_available %}Yes{% else %}No{% endif %}
+    </p>
+{% empty %}
+    <p>No products found.</p>
+{% endfor %}
+    
+</body>
+</html>
